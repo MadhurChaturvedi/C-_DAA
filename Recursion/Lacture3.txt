@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+
+void f(int i,int n){
+  if(i<n) return;
+  f(i-1,n);
+  cout<<i<<" ";
+}
+
+int main(){
+int i=5;
+int n=1;
+cout<<"Tesing Main"<<endl;
+f(i,n);
+return 0;
+}
