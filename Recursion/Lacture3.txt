@@ -14,3 +14,25 @@ cout<<"Tesing Main"<<endl;
 f(i,n);
 return 0;
 }
+
+-------- n-1 sum
+
+#include<iostream>
+using namespace std;
+
+void f(int i,int sum){
+  if(i<n){
+     cout<<i<<endl;
+     return;
+  } 
+
+  f(i-1,sum+i);
+}
+
+int main(){
+int i=5;
+int n=1;
+cout<<"Tesing Main"<<endl;
+f(i,n);
+return 0;
+}
