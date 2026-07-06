@@ -56,3 +56,24 @@ cout<<"Tesing Main"<<endl;
 cout<< f(n);
 return 0;
 }
+
+
+----------------- Factorial using functional recursion 
+// n
+#include<iostream>
+using namespace std;
+
+int f(int n){
+  if(n<=1){
+     return 1;
+  } 
+
+  return n*f(n-1);
+}
+
+int main(){
+int n=3;
+cout<<"Tesing Main"<<endl;
+cout<< f(n);
+return 0;
+}
