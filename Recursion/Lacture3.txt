@@ -36,3 +36,23 @@ cout<<"Tesing Main"<<endl;
 f(i,n);
 return 0;
 }
+
+--------- functionaly recursion
+
+#include<iostream>
+using namespace std;
+
+void f(int n){
+  if(n==0){
+     return 0;
+  } 
+
+  f(i+f(i-1));
+}
+
+int main(){
+int n=3;
+cout<<"Tesing Main"<<endl;
+cout<< f(n);
+return 0;
+}
