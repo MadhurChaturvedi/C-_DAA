@@ -1,0 +1,15 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){ 
+
+vector<int>arr = {5,7,2,1,2};
+// find largest element
+int High = arr[0]; 
+for(int i=0;i<arr.size();i++){
+   if(arr[i]>High){
+        High = arr[i];
+    }
+}
+ cout << High;
+}
