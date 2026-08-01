@@ -39,3 +39,22 @@ int main()
     }
     return 0;
 }
+
+
+
+-------------------------
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() 
+{
+    vector<int>v{1,2,4,5,6,7,8,12,15};
+    if(!binary_search(v.begin(),v.end(),11)){
+        cout<<"Target Not Found"<<endl;
+    }
+    else{
+        cout<<"Target found";
+    }
+    return 0;
+}
