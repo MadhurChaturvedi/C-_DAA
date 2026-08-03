@@ -38,3 +38,37 @@ int main()
     }
     return 0;
 }
+
+------------------------
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+
+        int totalSum = 0;
+        int i = 0;
+
+        // Calculate total sum
+        while (i < nums.size()) {
+            totalSum += nums[i];
+            i++;
+        }
+
+        int leftSum = 0;
+        i = 0;
+
+        // Find pivot index
+        while (i < nums.size()) {
+
+            int rightSum = totalSum - leftSum - nums[i];
+
+            if (leftSum == rightSum) {
+                return i;
+            }
+
+            leftSum += nums[i];
+            i++;
+        }
+
+        return -1;
+    }
+};
