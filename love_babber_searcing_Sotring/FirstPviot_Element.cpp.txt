@@ -22,3 +22,193 @@ int main()
     cout<< "The Pyvote Element is : "<<index;
     return 0;
 }
+
+
+
+Absolutely. Let's dry run your code step by step.
+
+We'll use this example:
+
+nums = [4,5,6,7,0,1,2]
+target = 0
+Step 1: search()
+pivotIndex = pivotSearch(nums);
+
+Now pivotSearch() is called.
+
+Step 2: Dry Run of pivotSearch()
+
+Array
+
+Index	0	1	2	3	4	5	6
+Value	4	5	6	7	0	1	2
+
+Initially
+
+s = 0
+e = 6
+mid = 3
+First Iteration
+mid = 3
+arr[mid] = 7
+
+Check
+
+if(arr[mid] > arr[mid+1])
+7 > 0
+
+✅ True
+
+So
+
+return 3;
+
+Pivot found immediately.
+
+pivotIndex = 3
+
+Back to
+
+search()
+
+Now
+
+pivotIndex = 3
+Step 3
+
+Check
+
+if(target >= nums[0] &&
+   target <= nums[pivotIndex])
+
+Substitute values
+
+0 >= 4
+
+False
+
+So first if is skipped.
+
+Now second if
+
+target >= nums[pivotIndex+1]
+0 >= nums[4]
+
+0 >= 0
+
+True
+
+Next
+
+target < nums[6]
+0 < 2
+
+True
+
+So Binary Search is called
+
+binarySearch(nums,0,4,6)
+Step 4: Binary Search
+
+Initial
+
+start = 4
+end = 6
+
+mid = (4+6)/2
+    = 5
+
+Array
+
+Index : 4 5 6
+Value : 0 1 2
+Iteration 1
+mid = 5
+
+element = 1
+
+Compare
+
+target = 0
+0 == 1
+
+No
+
+0 < 1
+
+Yes
+
+end = mid-1
+    = 4
+
+Update
+
+start = 4
+end = 4
+
+mid = (4+4)/2
+    = 4
+Iteration 2
+mid = 4
+
+element = 0
+
+Compare
+
+0 == 0
+
+True
+
+Return
+
+4
+
+Binary Search returns
+
+4
+
+Search returns
+
+4
+
+Final Answer
+
+Output = 4
+Complete Flow
+search()
+
+      |
+      v
+
+pivotSearch()
+
+s=0 e=6 mid=3
+
+        7 > 0
+
+return 3
+
+      |
+      v
+
+pivot = 3
+
+Target in second half?
+
+Yes
+
+      |
+
+binarySearch(4,6)
+
+mid=5
+
+1 > 0
+
+end=4
+
+mid=4
+
+0==0
+
+return 4
